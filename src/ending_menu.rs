@@ -48,7 +48,7 @@ pub fn create(
                 .with_children(|panel| {
                     panel.spawn(Text::new("You win!"));
                     spawn_menu_button(panel, ButtonAction::Restart, "Restart");
-                    spawn_menu_button(panel, ButtonAction::Quit, "Quit");
+                    spawn_menu_button(panel, ButtonAction::ToMainMenu, "To main menu");
                 });
         });
 }

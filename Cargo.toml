@@ -3,6 +3,12 @@ name = "memory_game"
 version = "0.1.0"
 edition = "2024"
 
+[package.metadata.bundle]
+name = "memory_game"
+identifier = "com.yourname.memory_game"
+icon = []
+resources = ["assets"]
+
 [dependencies]
 bevy = "0.19"
 rand = "0.10.3"

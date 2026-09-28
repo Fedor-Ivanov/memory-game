@@ -4,12 +4,14 @@ mod game_state;
 mod menu;
 mod primary_window;
 mod starting_menu;
+
 use bevy::{
     camera::Camera2d,
     ecs::schedule::{IntoScheduleConfigs, common_conditions::resource_changed},
     picking::mesh_picking::MeshPickingPlugin,
     prelude::{
-        App, Commands, DefaultPlugins, OnEnter, OnExit, PluginGroup, Startup, Update, in_state,
+        App, AssetPlugin, Commands, DefaultPlugins, OnEnter, OnExit, PluginGroup, Startup, Update,
+        in_state,
     },
     state::app::AppExtStates,
 };
@@ -20,7 +22,12 @@ fn main() {
     let mut app = App::new();
 
     app.add_plugins((
-        DefaultPlugins.set(primary_window::primary_window()),
+        DefaultPlugins
+            .set(primary_window::primary_window())
+            .set(AssetPlugin {
+                file_path: concat!(env!("CARGO_MANIFEST_DIR"), "/assets").into(),
+                ..Default::default()
+            }),
         MeshPickingPlugin,
     ))
     .init_state::<GameState>()

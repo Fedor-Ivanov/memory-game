@@ -51,7 +51,7 @@ const BORDER_SIZE: f32 = 5.0;
 
 const STEP_SIZE: f32 = CELL_SIZE + 2.0 * BORDER_SIZE + SPACING_SIZE;
 
-const PAIRS: usize = 6;
+const PAIRS: usize = 12;
 
 pub fn create(
     mut commands: Commands,

@@ -14,6 +14,7 @@ pub enum ButtonAction {
     Start,
     Quit,
     Restart,
+    ToMainMenu,
 }
 
 pub fn button_system(
@@ -37,6 +38,10 @@ pub fn button_system(
 
             ButtonAction::Restart => {
                 next_state.set(GameState::Playing);
+            }
+
+            ButtonAction::ToMainMenu => {
+                next_state.set(GameState::Start);
             }
         }
     }
